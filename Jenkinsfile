@@ -8,10 +8,12 @@ pipeline {
             steps{
                 sh 'chmod +x gradlew'
                 sh './gradlew build'
+                sh 'ls -la build/*'
             }
             post{
                 always {
-                    junit 'buil/test-results/test/*.xml'
+                    sh 'ls -ls build/*'
+                    junit 'build/test-results/test/*.xml'
                 }
             }
 		}
