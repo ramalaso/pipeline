@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             agent {
-                docker { image '4514812/ramalaso' }
+                docker { image 'openjdk:11.0.4-jdk' }
             }
             steps{
                 sh 'chmod +x gradlew'
